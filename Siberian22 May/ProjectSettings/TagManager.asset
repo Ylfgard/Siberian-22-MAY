@@ -8,16 +8,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enviroment
+  - Player
+  - Interactable
+  - Mask
+  - BehindMask
+  - Wall
+  - Black
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 163671855
+    locked: 0
+  - name: Enviroment
+    uniqueID: 45010047
+    locked: 0
+  - name: Player
+    uniqueID: 3711205365
+    locked: 0
+  - name: FogOfWar
+    uniqueID: 351376383
     locked: 0
