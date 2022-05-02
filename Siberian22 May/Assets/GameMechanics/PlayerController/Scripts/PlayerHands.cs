@@ -6,19 +6,25 @@ namespace PlayerController
     public class PlayerHands : MonoBehaviour
     {
         private Inventory _inventory;
-        private ToolTypes _toolInHands;
+        private ToolType _toolInHands;
 
-        public ToolTypes ToolInHands => _toolInHands;
+        public ToolType ToolInHands => _toolInHands;
 
         private void Awake()
         {
-            _inventory = FindObjectOfType<Inventory>();    
+            _inventory = FindObjectOfType<Inventory>();  
+            _inventory.ToolSelected += TakeToolInHands;
         }
 
         public void SelectToolInSlot(int number)
         {
             number -= 1;
-            _toolInHands = _inventory.SelectToolInSlot(number);
+            _inventory.SelectToolInSlot(number);
+        }
+
+        private void TakeToolInHands(ToolType tool)
+        {
+            _toolInHands = tool;
         }
     }
 }

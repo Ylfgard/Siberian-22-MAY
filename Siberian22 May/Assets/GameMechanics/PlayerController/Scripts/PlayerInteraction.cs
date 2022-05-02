@@ -23,7 +23,7 @@ namespace PlayerController
         {
             if(_objectInZone == null) return;
 
-            if(_objectInZone.RequiredTool == ToolTypes.None ||
+            if(_objectInZone.RequiredTool == ToolType.None ||
                  _objectInZone.RequiredTool == _hands.ToolInHands)
                 _objectInZone.Interact();
         }

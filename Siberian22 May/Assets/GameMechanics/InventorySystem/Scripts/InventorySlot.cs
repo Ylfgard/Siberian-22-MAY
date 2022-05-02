@@ -5,34 +5,34 @@ namespace InventorySystem
 {
     public class InventorySlot : MonoBehaviour
     {
-        private Image _image;
-        private Button _button;
+        public event SendTool ToolSelected;
         [SerializeField]
-        private ToolTypes _toolInSlot;
+        private Image _image;
+        private Toggle _toggle;
+        private ToolType _toolInSlot;
         
-        public ToolTypes ToolInSlot => _toolInSlot;
+        public ToolType ToolInSlot => _toolInSlot;
 
         private void Awake()
         {
-            _image = GetComponent<Image>();
-            _button = GetComponent<Button>();
+            _toggle = GetComponent<Toggle>();
         }
 
-        public void Initialize(Sprite sprite, ToolTypes toolType)
+        public void Initialize(ToolSO tool)
         {
-            _toolInSlot = toolType;
-            _image.sprite = sprite;
-            DeselectSlot();
+            _toolInSlot = tool.Type;
+            _image.sprite = tool.Sprite;
+            _toggle.isOn = false;
         }
 
         public void SelectSlot()
         {
-            _image.color = _button.colors.pressedColor;
+            _toggle.isOn = true;
         }
 
-        public void DeselectSlot()
+        public void SlotActiveChanged(bool state)
         {
-            _image.color = _button.colors.normalColor;
+            if(state) ToolSelected.Invoke(_toolInSlot);
         }
     }
 }

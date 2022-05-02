@@ -8,26 +8,26 @@ namespace InputSystem
         private MapInputHandler _mapInputHandler;
         [SerializeField]
         private LevelInputHandler _levelInputHandler;
-        private bool _inputDeactivated;
         [SerializeField]
         private InputState _inputState;
-
-        private void Awake()
-        {
-            
-        }
+        [SerializeField]
+        private LayerMask _selectable;
 
         private void Update()
         {
-            if(_inputDeactivated) return;
-
             switch(_inputState)
             {
                 case InputState.Map:
+                    if(Input.GetButtonDown("Select"))
+                    {
+                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        RaycastHit hit;
+                        if(Physics.Raycast(ray, out hit, Mathf.Infinity, _selectable))
+                            _mapInputHandler.SelectBuilding(hit.collider);
+                    }
                 break;
 
                 case InputState.Level:
-                
                     var hor = Input.GetAxisRaw("Horizontal");
                     var ver = Input.GetAxisRaw("Vertical");
                     if(Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")
@@ -47,16 +47,6 @@ namespace InputSystem
                         _levelInputHandler.SelectSlot(3);
                 break;
             }
-        }
-
-        public void DeactivateInput()
-        {
-            _inputDeactivated = true;
-        }
-
-        public void ActivateInput()
-        {
-            _inputDeactivated = false;
         }
     }
 

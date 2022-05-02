@@ -6,9 +6,9 @@ namespace InteractableObjects
     public abstract class InteractableObject : MonoBehaviour
     {
         [SerializeField]
-        private ToolTypes _requiredTool;
+        private ToolType _requiredTool;
 
-        public ToolTypes RequiredTool => _requiredTool;
+        public ToolType RequiredTool => _requiredTool;
 
         public abstract void Interact();
     }
