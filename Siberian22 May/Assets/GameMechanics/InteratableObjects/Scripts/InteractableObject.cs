@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using InventorySystem;
+using FMODUnity;
 
 namespace InteractableObjects
 {
@@ -9,9 +10,15 @@ namespace InteractableObjects
         public UnityEvent Interacted;
         [SerializeField]
         private ToolType _requiredTool;
+        [SerializeField]
+        private EventReference[] _soundPaths;
 
         public ToolType RequiredTool => _requiredTool;
 
-        public abstract void Interact();
+        public virtual void Interact()
+        {
+            foreach(var path in _soundPaths)
+                RuntimeManager.PlayOneShot(path);
+        }
     }
 }

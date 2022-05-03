@@ -6,6 +6,7 @@ namespace InteractableObjects
     {
         public override void Interact()
         {
+            base.Interact();
             FindObjectOfType<PlayerHands>().GrabPeople();
             Destroy(gameObject);
         }

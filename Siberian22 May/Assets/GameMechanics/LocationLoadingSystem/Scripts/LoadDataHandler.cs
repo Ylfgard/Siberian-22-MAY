@@ -56,9 +56,9 @@ namespace LocationLoadingSystem
                 _fires.Remove(_fires[index]);
             }
             
-            var percent = data.Difficult / 100;
-            int obstacleCount = _obstacles.Count * percent;
-
+            float percent = (float)data.Difficult / 100;
+            int obstacleCount = (int)(_obstacles.Count * percent);
+            Debug.Log(data.Difficult + " " + percent + " " + obstacleCount);
             for(int i = 0; i < obstacleCount; i++)
             {
                 var index = Random.Range(0, _obstacles.Count);

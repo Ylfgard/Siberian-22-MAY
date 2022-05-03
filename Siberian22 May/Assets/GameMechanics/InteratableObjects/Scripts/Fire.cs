@@ -21,6 +21,7 @@ namespace InteractableObjects
 
         public override void Interact()
         {
+            base.Interact();
             Interacted?.Invoke();
             Destroy(_fireFieldOfView.gameObject);
             Destroy(gameObject);

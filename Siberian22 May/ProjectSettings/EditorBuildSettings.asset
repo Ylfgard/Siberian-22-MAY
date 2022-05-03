@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameLevels/City.unity
     guid: 366e846cbcf49c04f9a4624e92792539
   - enabled: 1
-    path: Assets/Scenes/Alexandria.unity
-    guid: 6c0cd777e5ecb48468c3976ac1dbf141
+    path: Assets/Scenes/GameLevels/Level_1.unity
+    guid: 848a18c189ade9d45817798c03991d81
   m_configObjects: {}

@@ -1,9 +1,12 @@
 using UnityEngine;
+using Menu;
 
 namespace InputSystem
 {
     public class InputDetector : MonoBehaviour
     {   
+        [SerializeField]
+        private LevelLoader _loader;
         [SerializeField]
         private MapInputHandler _mapInputHandler;
         [SerializeField]
@@ -15,6 +18,9 @@ namespace InputSystem
 
         private void Update()
         {
+            if(Input.GetButtonDown("Menu"))
+                _loader.ChangeMenuState();
+
             switch(_inputState)
             {
                 case InputState.Map:
@@ -40,11 +46,11 @@ namespace InputSystem
                     if(Input.GetButtonDown("Slot1"))
                         _levelInputHandler.SelectSlot(1);
                     
-                    if(Input.GetButtonDown("Slot2"))
-                        _levelInputHandler.SelectSlot(2);
+                    // if(Input.GetButtonDown("Slot2"))
+                    //     _levelInputHandler.SelectSlot(2);
                     
-                    if(Input.GetButtonDown("Slot3"))
-                        _levelInputHandler.SelectSlot(3);
+                    // if(Input.GetButtonDown("Slot3"))
+                    //     _levelInputHandler.SelectSlot(3);
                 break;
             }
         }

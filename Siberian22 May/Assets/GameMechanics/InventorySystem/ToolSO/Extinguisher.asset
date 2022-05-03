@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Extinguisher
   m_EditorClassIdentifier: 
   _type: 2
-  _sprite: {fileID: 21300000, guid: 03976b6af3289c0409a55e2c4eab4087, type: 3}
+  _sprite: {fileID: 21300000, guid: 59840f38852bcdc4196a75cbd1fe5ec7, type: 3}
