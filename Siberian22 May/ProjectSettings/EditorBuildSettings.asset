@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/City.unity
+    path: Assets/Scenes/GameLevels/MainMenu.unity
+    guid: e792df73d9b85c64aa48cdbe0afe0b5b
+  - enabled: 1
+    path: Assets/Scenes/GameLevels/City.unity
     guid: 366e846cbcf49c04f9a4624e92792539
   - enabled: 1
     path: Assets/Scenes/Alexandria.unity

@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 using InventorySystem;
 
 namespace InteractableObjects
 {
     public abstract class InteractableObject : MonoBehaviour
     {
+        public UnityEvent Interacted;
         [SerializeField]
         private ToolType _requiredTool;
 

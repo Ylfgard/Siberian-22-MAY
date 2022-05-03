@@ -57,7 +57,13 @@ namespace InventorySystem
 
         public void SelectTool(ToolType tool)
         {
-            ToolSelected.Invoke(tool);
+            ToolSelected?.Invoke(tool);
+        }
+
+        public void ChangeInteractionState(bool state)
+        {
+            foreach(var slot in _slots)
+                slot.ChangeInteractionState(state);
         }
     }
 }

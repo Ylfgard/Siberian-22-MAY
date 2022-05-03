@@ -32,7 +32,13 @@ namespace InventorySystem
 
         public void SlotActiveChanged(bool state)
         {
-            if(state) ToolSelected.Invoke(_toolInSlot);
+            if(state) ToolSelected?.Invoke(_toolInSlot);
+        }
+
+        public void ChangeInteractionState(bool state)
+        {
+            _toggle.interactable = state;
+            _toggle.isOn = false;
         }
     }
 }

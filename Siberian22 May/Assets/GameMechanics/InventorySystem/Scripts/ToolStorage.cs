@@ -39,7 +39,6 @@ namespace InventorySystem
     {
         None,
         Axe,
-        Medicine,
         Extinguisher
     }
 }

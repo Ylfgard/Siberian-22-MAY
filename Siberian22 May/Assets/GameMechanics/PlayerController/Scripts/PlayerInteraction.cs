@@ -22,6 +22,7 @@ namespace PlayerController
         public void Interact()
         {
             if(_objectInZone == null) return;
+            if(_hands.WithPeople) return;
 
             if(_objectInZone.RequiredTool == ToolType.None ||
                  _objectInZone.RequiredTool == _hands.ToolInHands)

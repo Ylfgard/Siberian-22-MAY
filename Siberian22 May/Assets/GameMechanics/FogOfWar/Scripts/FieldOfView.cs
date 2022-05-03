@@ -12,7 +12,7 @@ namespace FogOfWar
         private float _fov;
         [SerializeField] [Range (1, 200)]
         private int _rayCount;
-        [SerializeField] [Range (1, 15)]
+        [SerializeField] [Range (1, 50)]
         float viewDistance;
         private Vector3 _origin;
         [SerializeField]
@@ -20,8 +20,13 @@ namespace FogOfWar
         private Mesh _mesh;
         private int _counter;
         private MeshFilter _meshFilter;
+
+        public void SetOrigin(Transform transf)
+        {
+            _transform = transf;
+        }
         
-        private void Awake()
+        private void Start()
         {
             _mesh = new Mesh();
             _meshFilter = GetComponent<MeshFilter>();
@@ -31,11 +36,12 @@ namespace FogOfWar
         
         private void LateUpdate()
         {
-            if(_counter >= 100) GenerateNewMesh();
+            if(_counter >= 40) GenerateNewMesh();
             else _counter++;
             
             float angle = 0f;
             float angleIncrease = _fov / _rayCount;
+            if(_transform == null) return;
             _origin = _transform.position;
 
             Vector3[] vertices = new Vector3[_rayCount + 1 + 1];
