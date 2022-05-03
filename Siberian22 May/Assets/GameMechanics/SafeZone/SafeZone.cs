@@ -17,7 +17,7 @@ namespace SafeZone
         {
             var player = other.GetComponent<PlayerHands>();
             if(player == null) return;
-            EnterSafeZone();
+            EnterSafeZone(player);
         }
 
         private void OnTriggerExit2D(Collider2D other)
@@ -27,8 +27,9 @@ namespace SafeZone
             ExitSafeZone();
         }
 
-        private void EnterSafeZone()
+        private void EnterSafeZone(PlayerHands player)
         {
+            if(player.WithPeople) player.RescuePeople();
             _toolStorage.ShowToolStorage();
         }
 

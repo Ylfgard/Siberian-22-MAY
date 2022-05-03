@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f3bab27f42409459ebc647b768c5d5, type: 3}
   m_Name: Extinguisher
   m_EditorClassIdentifier: 
-  _type: 3
+  _type: 2
   _sprite: {fileID: 21300000, guid: 03976b6af3289c0409a55e2c4eab4087, type: 3}

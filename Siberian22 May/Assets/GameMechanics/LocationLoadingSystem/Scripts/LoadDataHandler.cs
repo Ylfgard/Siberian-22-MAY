@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using GameEndSystem;
+using InteractableObjects;
 
 namespace LocationLoadingSystem
 {
@@ -29,12 +31,16 @@ namespace LocationLoadingSystem
                         _obstacles.Add(spawnPoint);
                     break;
                 }
-            }    
+            }
         }
 
         private void Start()
         {
             var data = LoadDataKeeper.Instance.FireData;
+
+            var endViewer = FindObjectOfType<EndGameViewer>();
+            endViewer.StartGame(data.Time, data.People, data.Fires, _fires);
+
             for(int i = 0; i < data.People; i++)
             {   
                 var index = Random.Range(0, _peoples.Count);
@@ -46,6 +52,7 @@ namespace LocationLoadingSystem
             {   
                 var index = Random.Range(0, _fires.Count);
                 _fires[index].Object.SetActive(true);
+                _fires[index].Object.GetComponent<Fire>().Activate();
                 _fires.Remove(_fires[index]);
             }
             
