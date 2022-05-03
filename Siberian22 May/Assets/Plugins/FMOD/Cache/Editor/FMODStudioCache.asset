@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/fmod/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637871875910088622
+  lastModified: 637872022662283839
   FileSizes: []
   Exists: 1
 --- !u!114 &-3497736674532716643
@@ -141,7 +141,7 @@ MonoBehaviour:
   Path: Assets/fmod/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637871875909889552
+  lastModified: 637872022662153821
   FileSizes: []
   Exists: 1
 --- !u!114 &-2069231111869498562
@@ -340,12 +340,13 @@ MonoBehaviour:
   - {fileID: 1513807734323069820}
   - {fileID: -2327987009423191659}
   - {fileID: -1428349500871936810}
+  - {fileID: 7256699896797318083}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2221969299671649293}
   StringsBanks:
   - {fileID: 6326049629168428722}
-  cacheTime: 637871875910088622
+  cacheTime: 637872022662283839
   cacheVersion: 10
 --- !u!114 &1513807734323069820
 MonoBehaviour:
@@ -470,10 +471,10 @@ MonoBehaviour:
   Path: Assets/fmod/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637871875909914704
+  lastModified: 637872022662163807
   FileSizes:
   - Name: 
-    Value: 1592
+    Value: 1644
   Exists: 1
 --- !u!114 &6488704622804109960
 MonoBehaviour:
@@ -493,6 +494,33 @@ MonoBehaviour:
     Data2: 1234262532
     Data3: 353048734
     Data4: 2103539882
+  Banks:
+  - {fileID: -2221969299671649293}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7256699896797318083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/human save
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/human save
+  Guid:
+    Data1: 181949575
+    Data2: 1142178092
+    Data3: -1980458841
+    Data4: -1199669491
   Banks:
   - {fileID: -2221969299671649293}
   IsStream: 0
